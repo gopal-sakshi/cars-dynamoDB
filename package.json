@@ -1,0 +1,28 @@
+{
+  "name": "cars-dynamodb",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "nodemon app.js",
+    "create-db": "cd dynamodb && node createCarsTable.js && cd ..",
+    "delete-db": "cd dynamodb && node deleteCarsTable.js && cd ..",
+    "load-data": "cd dynamodb && node loadCarData.js && cd ..",
+    "read-data": "cd dynamodb && node readDataTest.js && cd .."
+  },
+  "dependencies": {
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "express": "~4.16.1",
+    "http-errors": "~1.6.3",
+    "jade": "~1.11.0",
+    "morgan": "~1.9.1",
+    "aws-sdk": "^2.176.0",
+    "body-parser": "~1.18.2",
+    "cors": "^2.8.4",
+    "ejs": "^2.5.7",
+    "newman": "^3.9.1",
+    "node-uuid": "^1.4.8",
+    "serve-favicon": "~2.4.5",
+    "uuid": "^3.2.1"
+  }
+}
