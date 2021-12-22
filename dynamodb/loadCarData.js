@@ -1,11 +1,6 @@
-var AWS = require("aws-sdk");
+var AWS = require("../config/aws-config")
 var fs = require('fs');
-AWS.config.update({
-    region: "us-west-2",
-    endpoint: "http://localhost:8000",
-    accessKeyId: 'AKIA2MDOCKKQ4A4QW7NN',
-    secretAccessKey: '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', 
-});
+
 var docClient = new AWS.DynamoDB.DocumentClient();
 console.log("Importing Cars into DynamoDB. Please wait.");
 var cars = JSON.parse(fs.readFileSync('carData.json', 'utf8'));

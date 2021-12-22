@@ -4,15 +4,10 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-var AWS = require("aws-sdk");
+var AWS = require("./config/aws-config");
 var app = express();
 app.listen(3000, () => console.log('Cars API listening on port 3000!'))
-AWS.config.update({
-  region: "eu-west-2",
-  endpoint: "http://localhost:8000",
-  accessKeyId: 'AKIA2MDOCKKQ4A4QW7NN',
-  secretAccessKey: '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', 
-});
+
 var docClient = new AWS.DynamoDB.DocumentClient();
 app.use(logger('dev'));
 app.use(bodyParser.json());
@@ -47,7 +42,7 @@ function onScan(err, data) {
         data.Items.forEach(function(car) {
            console.log(car.id, car.type, car.name)
         });
-if (typeof data.LastEvaluatedKey != "undefined") {
+        if (typeof data.LastEvaluatedKey != "undefined") {
             console.log("Scanning for more...");
             params.ExclusiveStartKey = data.LastEvaluatedKey;
             docClient.scan(params, onScan);
