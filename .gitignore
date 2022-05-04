@@ -11,7 +11,8 @@
 /node_modules
 
 #configuration
-/config
+# /config
+# we commented this because in AWS, we are using dynamo locally... not giving real accessKeys & stuff
 
 # profiling files
 chrome-profiler-events*.json

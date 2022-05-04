@@ -1,11 +1,5 @@
 var AWS = require("../config/aws-config")
 
-/*
-    var config = new AWS.Config({
-    accessKeyId: 'AKID', secretAccessKey: 'SECRET', region: 'us-west-2'
-    });
-*/
-
 var dynamodb = new AWS.DynamoDB();
 var params = {
     TableName : "Cars",
