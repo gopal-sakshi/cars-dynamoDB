@@ -6,7 +6,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var AWS = require("./config/aws-config");
 var app = express();
-app.listen(3000, () => console.log('Cars API listening on port 3000!'))
+app.listen(3010, () => console.log('Cars API listening on port 3010!'))
 
 var docClient = new AWS.DynamoDB.DocumentClient();
 app.use(logger('dev'));
@@ -77,3 +77,31 @@ docClient.query(params, function(err, data) {
     }
 });
 });
+
+app.put('/addCar', function(req, res) {
+
+    var car = req.body;
+    console.log(car);    
+    var params = {
+        TableName: "Cars",
+        Item: {
+            "id": car.id,
+            "type": car.type,
+            "name": car.name,
+            "manufacturer": car.manufacturer,
+            "fuel_type": car.fuel_type,
+            "description": car.description
+        }
+    };
+    docClient.put(params, function(err, data) {
+        if (err) {
+            console.error("Unable to add Car", car.name, ". Error JSON:", JSON.stringify(err, null, 2));
+            res.send("athi pedda flopp");
+        } else {
+            console.log("PutItem succeeded:", car.name);
+            // res.send(200).status("PutItem succeeded:", car.name);       // I used this... what kind of idiot I am...
+            // res.status(200).send("PutItem succeeded:", car.name);        // even this threw error...
+            res.status(200).send("PutItem succeeded:");
+        }
+    });
+})
