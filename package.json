@@ -3,6 +3,9 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
+    "readMe23":"start dynamo local firstuuu... ",
+    "dynamo_start_local": "cd /home/vsspl/Desktop/otherFiles/dynamoLocal && java -Djava.library.path=./DynamoDBLocal_lib -jar DynamoDBLocal.jar -sharedDb -port 8002",
+    "dynamo_start_local_alias": "open terminal, type ddbPort... see bash_aliases",
     "start": "nodemon app.js",
     "create-db": "cd dynamodb && node createCarsTable.js && cd ..",
     "delete-db": "cd dynamodb && node deleteCarsTable.js && cd ..",
