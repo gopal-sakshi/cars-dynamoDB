@@ -4,11 +4,14 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-var AWS = require("./config/aws-config");
+
 var app = express();
 app.listen(3010, () => console.log('Cars API listening on port 3010!'))
 
-var docClient = new AWS.DynamoDB.DocumentClient();
+// var AWS = require("./config/aws-config");
+// var docClient = new AWS.DynamoDB.DocumentClient();
+
+var docClient = require("./config/aws-config");
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));

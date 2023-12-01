@@ -1,6 +1,6 @@
 var AWS = require("../config/aws-config")
 
-var dynamodb = new AWS.DynamoDB();
+var dynamoDb = new AWS.dynamoDb();
 var params = {
     TableName : "Cars",
     KeySchema: [
@@ -14,7 +14,7 @@ var params = {
         WriteCapacityUnits: 5
     }
 };
-dynamodb.createTable(params, function(err, data) {
+dynamoDb.createTable(params, function(err, data) {
     if (err) {
         console.error("Unable to create table. Error JSON:", JSON.stringify(err, null, 2));
     } else {
@@ -52,7 +52,7 @@ Created table. Table description JSON: {
     },
     "TableSizeBytes": 0,
     "ItemCount": 0,
-    "TableArn": "arn:aws:dynamodb:ddblocal:000000000000:table/Cars"
+    "TableArn": "arn:aws:dynamoDb:ddblocal:000000000000:table/Cars"
 }
 
 */

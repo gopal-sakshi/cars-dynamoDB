@@ -3,8 +3,8 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "readMe23":"start dynamo local firstuuu... ",
-    "dynamo_start_local": "cd /home/vsspl/Desktop/otherFiles/dynamoLocal && java -Djava.library.path=./DynamoDBLocal_lib -jar DynamoDBLocal.jar -sharedDb -port 8002",
+    "readMe23": "start dynamo local firstuuu... ",
+    "dynamo_start_local": "cd /home/gsakshi/Downloads/dynamoLocal23 && java -Djava.library.path=./DynamoDBLocal_lib -jar DynamoDBLocal.jar -sharedDb -port 8002",
     "dynamo_start_local_alias": "open terminal, type ddbPort... see bash_aliases",
     "start": "nodemon app.js",
     "create-db": "cd dynamodb && node createCarsTable.js && cd ..",
@@ -13,6 +13,7 @@
     "read-data": "cd dynamodb && node readDataTest.js && cd .."
   },
   "dependencies": {
+    "@aws-sdk/client-dynamodb": "^3.382.0",
     "aws-sdk": "^2.176.0",
     "body-parser": "~1.18.2",
     "cookie-parser": "~1.4.4",
