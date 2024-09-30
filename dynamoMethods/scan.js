@@ -25,7 +25,7 @@ module.exports = function (req, res) {
             data.Items.forEach(function (car) {
                 console.log(car.id, car.type, car.name)
             });
-            if (typeof data.LastEvaluatedKey != "undefined") {
+            if (typeof data.LastEvaluatedKey != "undefined") {      // README23
                 console.log("Scanning for more...");
                 params.ExclusiveStartKey = data.LastEvaluatedKey;
                 docClient.scan(params, onScan);
@@ -33,3 +33,11 @@ module.exports = function (req, res) {
         }
     }
 }
+
+/*
+    DynamoDB Fetches data in pages
+    - therefore you have to issue the same request more than once in case of multiple pages. 
+    - Therefore you have to use the last evaluated key to your next request
+    - "LastEvaluatedKey"        ### README23
+
+*/

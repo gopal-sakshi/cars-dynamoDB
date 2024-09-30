@@ -18,7 +18,7 @@ const dynamoClient = new DynamoDBClient({
 const { CreateTableCommand } = require("@aws-sdk/client-dynamodb"); 
 
 const { PutItemCommand, GetItemCommand } = require("@aws-sdk/client-dynamodb");
-const { PutCommand, GetCommand } = require("@aws-sdk/lib-dynamodb");
+const { PutCommand, GetCommand, QueryCommand } = require("@aws-sdk/lib-dynamodb");
 const { marshall, unmarshall } = require("@aws-sdk/util-dynamodb");
 
 
@@ -30,6 +30,7 @@ module.exports = {
     PutCommand,
     GetItemCommand, 
     PutItemCommand,
+    QueryCommand,
     marshall, unmarshall
 };
 /***********************************************************/

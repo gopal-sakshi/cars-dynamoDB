@@ -1,0 +1,55 @@
+{
+    "$metadata": {
+        "httpStatusCode": 200,
+        "requestId": "4465c38a-3516-4d39-a7bb-bfabcbc77e28",
+        "attempts": 1,
+        "totalRetryDelay": 0
+    },
+    "Count": 3,
+    "Items": [
+        {
+            "title": "Now You See Me",
+            "year": 2013,
+            "info": {
+                "actors": [
+                    "Jesse Eisenberg"
+                ],
+                "genres": [
+                    "Crime",
+                    "Mystery",
+                    "Thriller"
+                ]
+            }
+        },
+        {
+            "title": "Prisoners",
+            "year": 2013,
+            "info": {
+                "actors": [
+                    "Hugh Jackman"
+                ],
+                "genres": [
+                    "Crime",
+                    "Drama",
+                    "Thriller"
+                ]
+            }
+        },
+        {
+            "title": "Rush",
+            "year": 2013,
+            "info": {
+                "actors": [
+                    "Larry"
+                ],
+                "genres": [
+                    "Action",
+                    "Biography",
+                    "Drama",
+                    "Sport"
+                ]
+            }
+        }
+    ],
+    "ScannedCount": 3
+}

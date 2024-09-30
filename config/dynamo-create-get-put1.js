@@ -1,5 +1,5 @@
 var { dynamoClient } = require("../config/aws-config")
-var { CreateTableCommand, GetItemCommand, PutItemCommand, PutCommand, GetCommand, marshall, unmarshall } = require("../config/aws-config");
+var { CreateTableCommand, GetItemCommand, PutItemCommand, PutCommand, GetCommand, QueryCommand, marshall, unmarshall } = require("../config/aws-config");
 
 /************************************************************************* */
 const createTable = (async () => {
@@ -83,6 +83,33 @@ const get23 = async () => {
     const response = await dynamoClient.send(command);
     console.log("getResp1 ===> ", JSON.stringify(response));
 }
+
+const get24 = async () => {
+    const command = new GetCommand({
+        TableName: "Movies",
+        Key: { year: 2013, title: "Rush" }
+    });
+    const response = await dynamoClient.send(command);
+    console.log("getResp1 ===> ", JSON.stringify(response));
+}
+
+const query23 = async () => {
+    const command = new QueryCommand({ 
+        TableName: "Movies",
+        ProjectionExpression: "#yr, title, info.genres, info.actors[0]",
+        KeyConditionExpression: "#yr = :yyyy and title between :letter1 and :letter2",
+        ExpressionAttributeNames: {
+            "#yr": "year",
+        },
+        ExpressionAttributeValues: {
+            ":yyyy": 2013,
+            ":letter1": "M",
+            ":letter2": "S",
+        }
+    })
+    const response = await dynamoClient.send(command);
+    console.log("getResp1 ===> ", JSON.stringify(response));
+}
 /************************************************************************* */
 
 
@@ -91,5 +118,7 @@ const get23 = async () => {
 // put23();
 // put24();
 // marshall23();
-get23();
+// get23();
+// get24();
+query23();
 /************************************************************************* */
