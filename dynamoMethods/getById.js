@@ -5,7 +5,7 @@ module.exports = function (req, res) {
     var carID = parseInt(req.url.slice(6));
     var params = {
         TableName: "Cars_v2",
-        KeyConditionExpression: "#id = :id",
+        KeyConditionExpression: "#id = :id",        
         ExpressionAttributeNames: {
             "#id": "id"
         },
