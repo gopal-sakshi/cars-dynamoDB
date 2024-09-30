@@ -1,11 +1,8 @@
-var fs = require('fs');
-var cars = JSON.parse(fs.readFileSync('carData.json', 'utf8'));
 var AWS = require("../config/aws-config-v2");
 var docClient = new AWS.DynamoDB.DocumentClient();
 
-/**********************************************************************/
-
-cars.forEach(function (car) {    
+module.exports = function (req, res) {
+    var car = req.body;    
     var params = {
         TableName: "Cars_v2",
         Item: {
@@ -18,8 +15,12 @@ cars.forEach(function (car) {
         }
     };
     docClient.put(params, function (err, data) {
-        if (err) { console.error("Unable to add Car", car.name, ". Error JSON:", JSON.stringify(err, null, 2)); } 
-        else { console.log("PutItem succeeded:", car.name); }
+        if (err) {
+            console.error("Unable to add Car", car.name, ". Error JSON:", JSON.stringify(err, null, 2));
+            res.send("athi pedda flopp");
+        } else {
+            console.log("PutItem succeeded:", car.name);
+            res.status(200).send({info: "PutItem succeeded:", name23: car.name});
+        }
     });
-});
-/**********************************************************************/
+}

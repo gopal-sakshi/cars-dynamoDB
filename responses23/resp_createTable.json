@@ -1,0 +1,36 @@
+{
+    "$metadata": {
+        "httpStatusCode": 200,
+        "requestId": "1ac437e6-ecea-4025-a2ee-1fcb1478eb02",
+        "attempts": 1,
+        "totalRetryDelay": 0
+    },
+    "TableDescription": {
+        "AttributeDefinitions": [
+            {
+                "AttributeName": "id",
+                "AttributeType": "N"
+            }
+        ],
+        "CreationDateTime": "2024-09-30T03:55:36.498Z",
+        "DeletionProtectionEnabled": false,
+        "ItemCount": 0,
+        "KeySchema": [
+            {
+                "AttributeName": "id",
+                "KeyType": "HASH"
+            }
+        ],
+        "ProvisionedThroughput": {
+            "LastDecreaseDateTime": "1970-01-01T00:00:00.000Z",
+            "LastIncreaseDateTime": "1970-01-01T00:00:00.000Z",
+            "NumberOfDecreasesToday": 0,
+            "ReadCapacityUnits": 5,
+            "WriteCapacityUnits": 5
+        },
+        "TableArn": "arn:aws:dynamodb:ddblocal:000000000000:table/Cars",
+        "TableName": "Cars",
+        "TableSizeBytes": 0,
+        "TableStatus": "ACTIVE"
+    }
+}

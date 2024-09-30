@@ -1,33 +1,35 @@
 /***********************************************************/
-var AWS = require('aws-sdk');
-AWS.config.update({
-    region: "us-east-2",
-    accessKeyId: 'chanti_gadu_local',   // this doesnt have to be real Values
-    secretAccessKey: 'idiot_movie',
-    endpoint: "http://localhost:8002"
-});
-
-var docClient = new AWS.DynamoDB.DocumentClient();
-var dynamoDb = new AWS.DynamoDB();
-/***********************************************************/
-
-
-
-
-
-/***********************************************************/
 const { DynamoDBClient } = require("@aws-sdk/client-dynamodb");
-const client = new DynamoDBClient({ region: "REGION" });
+
+const dynamoClient = new DynamoDBClient({
+    endpoint: "http://192.168.29.120:49003",
+    region: 'us-east-1',
+    credentials: {
+        accessKeyId: "xxx",
+        secretAccessKey: "yyy",
+    },
+});
 /***********************************************************/
 
 
+
+
+/***********************************************************/
+const { CreateTableCommand } = require("@aws-sdk/client-dynamodb"); 
+
+const { PutItemCommand, GetItemCommand } = require("@aws-sdk/client-dynamodb");
+const { PutCommand, GetCommand } = require("@aws-sdk/lib-dynamodb");
+const { marshall, unmarshall } = require("@aws-sdk/util-dynamodb");
 
 
 /***********************************************************/
 module.exports = {
-    AWS: AWS,
-    docClient: docClient,
-    dynamoDb: dynamoDb,
-    DynamoDBClient:DynamoDBClient
+    dynamoClient,
+    CreateTableCommand,
+    GetCommand,
+    PutCommand,
+    GetItemCommand, 
+    PutItemCommand,
+    marshall, unmarshall
 };
 /***********************************************************/

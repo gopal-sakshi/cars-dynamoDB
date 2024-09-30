@@ -1,0 +1,22 @@
+{
+    "$metadata": {
+        "httpStatusCode": 200,
+        "requestId": "8f0a54cd-cc2b-40c5-a4ad-8f1c746034bc",
+        "attempts": 1,
+        "totalRetryDelay": 0
+    },
+    "ConsumedCapacity": {
+        "CapacityUnits": 0.5,
+        "TableName": "Cars"
+    },
+    "Item": {
+        "name": "BMW - luxury",
+        "otherInfo": {
+            "type": "petrol",
+            "country": "germany",
+            "cost": "72 lakhs"
+        },
+        "model": "X3",
+        "id": 102
+    }
+}

@@ -1,18 +1,58 @@
 [
-  { 
-    "id": 1,
-    "type" : "Automatic",
-    "name" : "Toyota Yaris",
-    "manufacturer" : "Toyota",
-    "fuel_type" : "Petrol",
-    "description" : "A smooth ride"
-  },
-  { 
-    "id": 2,
-    "type" : "Manual",
-    "name" : "Volkswagen Golf",
-    "manufacturer" : "Volkswagen",
-    "fuel_type" : "Petrol",
-    "description" : "Good Value"
-  }
+    {
+        "id": 11,
+        "type": "Automatic",
+        "name": "Toyota Yaris",
+        "manufacturer": "Toyota",
+        "fuel_type": "Petrol",
+        "description": "A smooth ride"
+    },
+    {
+        "id": 12,
+        "type": "Manual",
+        "name": "swift desire",
+        "manufacturer": "maruti suzuki",
+        "fuel_type": "indian car",
+        "description": "Good Value"
+    },
+    {
+        "id": 13,
+        "type": "Autopilot",
+        "name": "i20",
+        "manufacturer": "Hyundai",
+        "fuel_type": "Diesel",
+        "description": "its south korean company23"
+    },
+    {
+        "id": 14,
+        "type": "Manual",
+        "name": "Fortuner",
+        "manufacturer": "Toyota",
+        "fuel_type": "Petrol",
+        "description": "rowdy car23"
+    },
+    {
+        "id": 15,
+        "type": "Autopilot",
+        "name": "Benz",
+        "manufacturer": "Mercedes",
+        "fuel_type": "Petrol",
+        "description": "nice benz car"
+    },
+    {
+        "id": 16,
+        "type": "Manual",
+        "name": "Audi Golf",
+        "manufacturer": "Audi",
+        "fuel_type": "EV",
+        "description": "latest model in EV"
+    },
+    {
+        "id": 17,
+        "type": "Automatic",
+        "name": "BMW",
+        "manufacturer": "Bavarian motor works",
+        "fuel_type": "Petrol",
+        "description": "BMW is nice car"
+    }
 ]

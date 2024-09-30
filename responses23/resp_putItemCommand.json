@@ -1,0 +1,12 @@
+{
+    "$metadata": {
+        "httpStatusCode": 200,
+        "requestId": "cc1d6442-6862-4985-a311-1c278f4e04a9",
+        "attempts": 1,
+        "totalRetryDelay": 0
+    },
+    "ConsumedCapacity": {
+        "CapacityUnits": 1,
+        "TableName": "Cars"
+    }
+}
