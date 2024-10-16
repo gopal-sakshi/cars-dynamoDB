@@ -1,0 +1,104 @@
+{
+   "AttributeDefinitions": [ 
+      { 
+         "AttributeName": "string",
+         "AttributeType": "string"
+      }
+   ],
+   "BillingMode": "string",
+   "GlobalSecondaryIndexes": [ 
+      { 
+         "IndexName": "string",
+         "KeySchema": [ 
+            { 
+               "AttributeName": "string",
+               "KeyType": "string"
+            }
+         ],
+         "Projection": { 
+            "NonKeyAttributes": [ "string" ],
+            "ProjectionType": "string"
+         },
+         "ProvisionedThroughput": { 
+            "ReadCapacityUnits": number,
+            "WriteCapacityUnits": number
+         }
+      }
+   ],
+   "KeySchema": [ 
+      { 
+         "AttributeName": "string",
+         "KeyType": "string"
+      }
+   ],
+   "LocalSecondaryIndexes": [ 
+      { 
+         "IndexName": "string",
+         "KeySchema": [ 
+            { 
+               "AttributeName": "string",
+               "KeyType": "string"
+            }
+         ],
+         "Projection": { 
+            "NonKeyAttributes": [ "string" ],
+            "ProjectionType": "string"
+         }
+      }
+   ],
+   "ProvisionedThroughput": { 
+      "ReadCapacityUnits": number,
+      "WriteCapacityUnits": number
+   },
+   "SSESpecification": { 
+      "Enabled": boolean,
+      "KMSMasterKeyId": "string",
+      "SSEType": "string"
+   },
+   "StreamSpecification": { 
+      "StreamEnabled": boolean,
+      "StreamViewType": "string"
+   },
+   "TableClass": "string",
+   "TableName": "string",
+   "Tags": [ 
+      { 
+         "Key": "string",
+         "Value": "string"
+      }
+   ]
+}
+---------------------------------------------------------------------------------------------------
+AttributeDefinitions
+- An array of attributes that describe the key schema for the table & indexes.
+- Don't include any non-key attribute definitions in AttributeDefinitions.
+
+KeySchema
+- Specifies the attributes that make up the primary key for a table or an index
+- Each KeySchemaElement in the array is composed of:
+   AttributeName - The name of this key attribute.
+   KeyType - The role that the key attribute will assume:
+      HASH - partition key
+      RANGE - sort key
+
+TableName
+- The name of the table to create
+
+BillingMode
+- Controls how you are charged for read & write throughput.
+- PROVISIONED - recommended for predictable workloads.
+- PAY_PER_REQUEST - recommended for unpredictable workloads.
+
+GlobalSecondaryIndexes
+- 
+
+LocalSecondaryIndexes
+- 
+
+... others ...
+---------------------------------------------------------------------------------------------------
+MANDATORY Fields
+- AttributeDefinitions
+- KeySchema
+- TableName
+---------------------------------------------------------------------------------------------------

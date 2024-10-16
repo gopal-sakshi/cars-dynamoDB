@@ -1,8 +1,7 @@
-var AWS = require("../config/aws-config-v2")
+var { dynamoDb } = require("../config/aws-config-v2");
 
-var dynamoDb = new AWS.DynamoDB()
 var params = {
-    TableName : "Cars_v2",
+    TableName : "Cars_v3",
     KeySchema: [
         { AttributeName: "id", KeyType: "HASH"},  //Partition key
     ],

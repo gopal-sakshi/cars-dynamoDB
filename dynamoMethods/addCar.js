@@ -1,5 +1,4 @@
-var AWS = require("../config/aws-config-v2");
-var docClient = new AWS.DynamoDB.DocumentClient();
+
 
 module.exports = function (req, res) {
     var car = req.body;    

@@ -1,5 +1,4 @@
-var AWS = require("../config/aws-config-v2");
-var dynamoDb = new AWS.DynamoDB()
+var { dynamoDb } = require("../config/aws-config-v2");
 
 var params = {
     TableName : "gsi23_Logins",

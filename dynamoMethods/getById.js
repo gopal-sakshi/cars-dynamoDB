@@ -1,5 +1,4 @@
-var AWS = require("../config/aws-config-v2");
-var docClient = new AWS.DynamoDB.DocumentClient();
+var { docClient } = require("../config/aws-config-v2");
 
 module.exports = function (req, res) {
     var carID = parseInt(req.url.slice(6));

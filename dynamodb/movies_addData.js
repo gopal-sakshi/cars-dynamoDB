@@ -1,6 +1,6 @@
 var fs = require("fs");
-var AWS = require("../config/aws-config-v2");
-var docClient = new AWS.DynamoDB.DocumentClient();
+var { docClient } = require("../config/aws-config-v2");
+
 
 var allMovies = JSON.parse(fs.readFileSync("dynamodb/movies_loaddata.json", "utf8"));
 

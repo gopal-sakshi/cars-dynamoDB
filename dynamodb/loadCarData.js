@@ -1,7 +1,6 @@
 var fs = require('fs');
 var cars = JSON.parse(fs.readFileSync('carData.json', 'utf8'));
-var AWS = require("../config/aws-config-v2");
-var docClient = new AWS.DynamoDB.DocumentClient();
+var { docClient } = require("../config/aws-config-v2");
 
 /**********************************************************************/
 

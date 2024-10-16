@@ -1,5 +1,9 @@
-var { dynamoClient } = require("../config/aws-config")
-var { CreateTableCommand, GetItemCommand, PutItemCommand, PutCommand, GetCommand, QueryCommand, marshall, unmarshall } = require("../config/aws-config");
+var { dynamoClient } = require("./aws-config-v3")
+var { CreateTableCommand, GetItemCommand, PutItemCommand, PutCommand, GetCommand, QueryCommand, marshall, unmarshall } = require("./aws-config-v3");
+
+
+// require("@aws-sdk/client-dynamodb"); ====> This file is to TEST "aws-sdk-v3"
+// for testing aws-sdk-v2 ====> see dynamodb folder
 
 /************************************************************************* */
 const createTable = (async () => {
@@ -119,6 +123,6 @@ const query23 = async () => {
 // put24();
 // marshall23();
 // get23();
-// get24();
-query23();
+get24();
+// query23();
 /************************************************************************* */

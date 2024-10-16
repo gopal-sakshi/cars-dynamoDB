@@ -1,0 +1,57 @@
+aws dynamodb create-table \
+    --table-name Music \
+    --attribute-definitions \
+        AttributeName=Artist,AttributeType=S \
+        AttributeName=SongTitle,AttributeType=S \
+    --key-schema \
+        AttributeName=Artist,KeyType=HASH \
+        AttributeName=SongTitle,KeyType=RANGE \
+    --provisioned-throughput \
+        ReadCapacityUnits=5,WriteCapacityUnits=5 \
+    --table-class STANDARD
+
+
+ProductCatalog table
+
+aws dynamodb create-table --table-name ProductCatalog --attribute-definitions AttributeName=Id,AttributeType=N --key-schema AttributeName=Artist,KeyType=HASH --provisioned-throughput ReadCapacityUnits=5,WriteCapacityUnits=5  --table-class STANDARD
+--------------------------------------------------------------------------------------------------------------
+
+Don't include any non-key attribute definitions in AttributeDefinitions.
+DynamoDB is schemaless (except the key schema)
+That is to say, you do need to specify the key schema (attribute name & type) when you create the table. 
+- Well, you don't need to specify any non-key attributes. 
+- You can put an item with any attribute later (must include the keys of course).
+--------------------------------------------------------------------------------------------------------------
+ERROR:
+- The number of attributes in key schema must match the number of attributes defined in attribute definitions.
+- Say, your attribute definitions[] has 4 elements
+    id, number
+    name, string
+    club, string
+    position, string
+- then, all these attributes must be included in the keySchema
+- it can be dealt two ways...
+
+- APPROACH I 
+    just omit unnecessary attributes from attributeDefintionArray[]... 
+        you can always insert another item
+- APPROACH II
+    just mention those attributes in localSecondaryIndex (or) globalSecondaryIndex
+
+
+In simple terms
+- Do not include all the Key values in the --attribute-definitions & --key-schema. 
+- Only include the HASH and RANGE keys in these while creating table.
+--------------------------------------------------------------------------------------------------------------
+ISSUE 
+- I want to auto increment id value when I use putitem with dynamodb.
+
+SOLUTION
+- This is anti-pattern in DynamoDB which is build to scale across many partitions/shards/servers. 
+- DynamoDB does not support auto-increment primary keys due to scaling limitations and cannot be guaranteed across multiple servers.
+- Better option is to assemble primary key from multiple indices.
+--------------------------------------------------------------------------------------------------------------
+
+If you have used n number of keys while creating table, then here also you need to pass n number of keys.
+
+--------------------------------------------------------------------------------------------------------------

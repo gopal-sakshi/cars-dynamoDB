@@ -1,8 +1,6 @@
 // https://github.com/awsdocs/aws-doc-sdk-examples/blob/main/javascript/example_code/dynamodb/GettingStarted
 
-var AWS = require("../config/aws-config-v2")
-var dynamodb = new AWS.DynamoDB()
-
+var { dynamodb } = require("../config/aws-config-v2");
 
 var params = {
     TableName: "Movies",

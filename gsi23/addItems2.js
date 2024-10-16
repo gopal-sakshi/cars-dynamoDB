@@ -1,7 +1,6 @@
 // insert GSI, LSI --- just specify the corresponding attributes for the index  "company" & "factory"
 
-var AWS = require("../config/aws-config-v2");
-var dynamoDb = new AWS.DynamoDB();
+var { dynamoDb } = require("../config/aws-config-v2");
 
 var params1 = {
     TableName:"gsi23_Supervisors",

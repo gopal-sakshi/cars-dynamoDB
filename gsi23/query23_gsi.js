@@ -1,7 +1,6 @@
 // query using GSI
 
-var AWS = require("../config/aws-config-v2");
-var docClient = new AWS.DynamoDB.DocumentClient();
+var { docClient } = require("../config/aws-config-v2");
 
 var params = {
     TableName: "gsi23_Supervisors",

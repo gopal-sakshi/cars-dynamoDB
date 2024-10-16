@@ -1,0 +1,34 @@
+TableName: TableName;
+
+Item: PutItemInputAttributeMap;
+    // simple key:value
+    
+ConditionalOperator             // A condition that must be satisfied in order for a conditional PutItem operation to succeed
+    Functions: attribute_exists | attribute_not_exists | attribute_type | contains | begins_with | size  
+    Comparison operators: = | &lt;&gt; | &lt; | &gt; | &lt;= | &gt;= | BETWEEN | IN
+    Logical operators: AND | OR | NOT
+
+ConditionExpression?: ConditionExpression;
+    A substitution tokens for attribute names in an expression.
+    - To access an attribute whose name conflicts with a DynamoDB reserved word.
+    - To create a placeholder for repeating occurrences of an attribute name in an expression.
+    - To prevent special characters in an attribute name from being misinterpreted in an expression.
+    - Use the # character in an expression to dereference an attribute name. 
+    - For example, consider the following attribute name:    
+        Percentile -----> The name of this attribute conflicts with a reserved word, so it cannot be used directly in an expression. 
+        To work around this, you could specify the following for ExpressionAttributeNames:    {"#P":"Percentile"}
+        You could then use this substitution in an expression, as in this example:    #P = :val
+    - Tokens that begin with the : character are expression attribute values, which are placeholders for the actual value at runtime.  
+    
+ExpressionAttributeNames?: ExpressionAttributeNameMap;
+
+    One or more values that can be substituted in an expression. 
+    Use the : (colon) character in an expression to dereference an attribute value. 
+    For example, suppose that you wanted to check whether the value of the ProductStatus attribute was one of the following:
+        Available | Backordered | Discontinued  
+    You would first need to specify ExpressionAttributeValues as follows:  
+        { ":avail":{"S":"Available"}, ":back":{"S":"Backordered"}, ":disc":{"S":"Discontinued"} }  
+    You could then use these values in an expression, such as this:  
+        ProductStatus IN (:avail, :back, :disc)
+
+ExpressionAttributeValues?: ExpressionAttributeValueMap;
