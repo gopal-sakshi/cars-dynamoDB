@@ -1,0 +1,23 @@
+{
+    "$metadata": {
+        "httpStatusCode": 200,
+        "attempts": 1,
+        "totalRetryDelay": 0
+    },
+    "Subscriptions": [
+        {
+            "SubscriptionArn": "arn:aws:sns:us-east-1:000000000000:topic23_football:61d18c7f-2e59-4c79-8f0a-4233cb6364b6",
+            "Owner": "000000000000",
+            "Protocol": "email",
+            "Endpoint": "pedabicar@gmail.com",
+            "TopicArn": "arn:aws:sns:us-east-1:000000000000:topic23_football"
+        },
+        {
+            "SubscriptionArn": "arn:aws:sns:us-east-1:000000000000:topic23_football:aaeedc28-f087-4880-a492-ea6b68f2f248",
+            "Owner": "000000000000",
+            "Protocol": "lambda",
+            "Endpoint": "arn:aws:lambda:us-east-1:000000000000:function:sns_lambda23",
+            "TopicArn": "arn:aws:sns:us-east-1:000000000000:topic23_football"
+        }
+    ]
+}
