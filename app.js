@@ -15,7 +15,7 @@ app.put('/addCar', require("./dynamoMethods/addCar"));
 app.use('/s3_v2', require("./S3/players_v2"));
 app.use('/s3_v3', require("./S3/players_v3"));
 
-
+app.use('/kinesis23', require("./kinesis23/push_Msg_to_stream1"));
 
 app.get('/', function (req, res) {
     res.send({ title: "Cars API Entry Point" });
