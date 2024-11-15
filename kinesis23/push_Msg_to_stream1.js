@@ -35,6 +35,17 @@ router.put('/addMsg', async (req, res) => {
     }    
 });
 
+router.put("/addMsgs", async(req, res) => {
+    const params = {
+        Records: req.body.records.map(e => ({
+            Data: JSON.stringify(e),
+            PartitionKey: e.pKeyType
+        })),
+        StreamName: "stream2323"
+    };
+    try { const result = await kinesisClient.putRecords(params).promise(); return result; } 
+    catch (error) { throw error; } 
+});
 
 router.get("/describeSummary", (req, res) => {
     var params = { StreamARN: 'arn:aws:kinesis:ap-south-1:713195410081:stream/stream2323' };
