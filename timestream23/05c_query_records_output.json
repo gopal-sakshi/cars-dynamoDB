@@ -1,0 +1,150 @@
+{
+    "$metadata": {
+        "httpStatusCode": 200,
+        "requestId": "3BTNZBF573FTOSM6SJHT2HILY4",
+        "attempts": 1,
+        "totalRetryDelay": 0
+    },
+    "ColumnInfo": [
+        {
+            "Name": "az",
+            "Type": {
+                "ScalarType": "VARCHAR"
+            }
+        },
+        {
+            "Name": "hostId",
+            "Type": {
+                "ScalarType": "VARCHAR"
+            }
+        },
+        {
+            "Name": "region",
+            "Type": {
+                "ScalarType": "VARCHAR"
+            }
+        },
+        {
+            "Name": "measure_name",
+            "Type": {
+                "ScalarType": "VARCHAR"
+            }
+        },
+        {
+            "Name": "time",
+            "Type": {
+                "ScalarType": "TIMESTAMP"
+            }
+        },
+        {
+            "Name": "measure_value::double",
+            "Type": {
+                "ScalarType": "DOUBLE"
+            }
+        },
+        {
+            "Name": "memory_utilization",
+            "Type": {
+                "ScalarType": "DOUBLE"
+            }
+        },
+        {
+            "Name": "cpu_utilization",
+            "Type": {
+                "ScalarType": "DOUBLE"
+            }
+        }
+    ],
+    "QueryId": "AEBQEANYNXC2E3QUH3P3ZSL2LFV2DRQJJBC4M5R554HAFDU5253W5DR33TV633A",
+    "QueryStatus": {
+        "CumulativeBytesMetered": 0,
+        "CumulativeBytesScanned": 110,
+        "ProgressPercentage": 100
+    },
+    "Rows": [
+        {
+            "Data": [
+                {
+                    "ScalarValue": "az1"
+                },
+                {
+                    "ScalarValue": "host34"
+                },
+                {
+                    "ScalarValue": "us-east-1"
+                },
+                {
+                    "ScalarValue": "cpu_utilization"
+                },
+                {
+                    "ScalarValue": "2024-11-17 09:27:37.385000000"
+                },
+                {
+                    "ScalarValue": "55.0"
+                },
+                {
+                    "NullValue": true
+                },
+                {
+                    "NullValue": true
+                }
+            ]
+        },
+        {
+            "Data": [
+                {
+                    "ScalarValue": "az1"
+                },
+                {
+                    "ScalarValue": "host34"
+                },
+                {
+                    "ScalarValue": "us-east-1"
+                },
+                {
+                    "ScalarValue": "cpu_memory"
+                },
+                {
+                    "ScalarValue": "2024-11-17 09:27:37.385000000"
+                },
+                {
+                    "NullValue": true
+                },
+                {
+                    "ScalarValue": "99.0"
+                },
+                {
+                    "ScalarValue": "55.0"
+                }
+            ]
+        },
+        {
+            "Data": [
+                {
+                    "ScalarValue": "az1"
+                },
+                {
+                    "ScalarValue": "host34"
+                },
+                {
+                    "ScalarValue": "us-east-1"
+                },
+                {
+                    "ScalarValue": "memory_utilization"
+                },
+                {
+                    "ScalarValue": "2024-11-17 09:27:37.385000000"
+                },
+                {
+                    "ScalarValue": "99.0"
+                },
+                {
+                    "NullValue": true
+                },
+                {
+                    "NullValue": true
+                }
+            ]
+        }
+    ]
+}
