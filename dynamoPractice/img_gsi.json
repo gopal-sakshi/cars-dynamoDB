@@ -1,0 +1,21 @@
+{
+    "GlobalSecondaryIndexes": [
+        {
+            "IndexName": "GSI2",
+            "KeySchema": [
+                { "AttributeName": "GSI2-PK", "KeyType": "HASH" },
+                { "AttributeName": "GSI2-SK", "KeyType": "RANGE" }
+            ],
+            "Projection": {
+                "ProjectionType": "ALL"
+            }
+        },
+        {
+            "IndexName": "GSI1",
+            "KeySchema": [
+                { "AttributeName": "GSI1-PK", "KeyType": "HASH", "stuff23": "" },
+                { "AttributeName": "GSI1-SK", "KeyType": "RANGE" }
+            ]
+        }
+    ]
+}

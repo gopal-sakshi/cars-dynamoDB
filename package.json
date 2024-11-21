@@ -18,6 +18,7 @@
     "@aws-sdk/client-sts": "^3.693.0",
     "@aws-sdk/client-timestream-query": "^3.693.0",
     "@aws-sdk/client-timestream-write": "^3.693.0",
+    "@aws-sdk/credential-providers": "^3.696.0",
     "@aws-sdk/lib-dynamodb": "^3.658.1",
     "@aws-sdk/util-dynamodb": "^3.658.1",
     "aws-sdk": "^2.176.0",
