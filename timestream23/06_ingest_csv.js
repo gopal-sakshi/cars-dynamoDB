@@ -40,7 +40,7 @@ async function ingestCsvRecords(writeClient, filePath) {
             'MeasureName': row[6].toString(),
             'MeasureValue': row[7].toString(),
             'MeasureValueType': row[8].toString(),
-            'Time': recordTime.toString()
+            'Time': recordTime.toString()               // okay, here we're taking current time; not csv time
         };
 
         records.push(record);
